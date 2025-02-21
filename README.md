@@ -1,4 +1,6 @@
 # ThinkPO: Thinking Preference Optimization
+> a simple yet effective postSFT method that enhances long CoT reasoning without requiring new long CoT responses
+
 <p align="center">
   <img src="./imgs/Training_pipeline.png" alt="Training Pipeline" width=600>
 </p>
@@ -12,8 +14,6 @@
 
 ---
 # Introduction
-> a simple yet effective postSFT method that enhances long CoT reasoning without requiring new long CoT responses
-
 - Here, we show the results of open-source reasoning LLMs before and after ThinkPO.
 ## Accuracy
 
