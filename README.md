@@ -1,5 +1,7 @@
 # ThinkPO: Thinking Preference Optimization
-<img src="./imgs/Training_pipeline.png" alt="Training Pipeline">
+<p align="center">
+  <img src="./imgs/Training_pipeline.png" alt="Training Pipeline">
+</p>
 
 ---
 # News
