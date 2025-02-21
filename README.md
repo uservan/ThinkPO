@@ -33,7 +33,7 @@ cd ./tools
 python ./eval.py \
     --model deepseek-ai/DeepSeek-R1-Distill-Qwen-7B \
     --evals MATH500,AIME,GPQADiamond,GSM8K,OlympiadBenchMath \
-    --tp 1 --output_file ./results/eval/DeepSeek-R1-Distill-Qwen-7B.txt \
+    --tp 2 --output_file ./results/eval/DeepSeek-R1-Distill-Qwen-7B.txt \
     --result_dir ./results/generated
 ```
 
