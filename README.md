@@ -1,6 +1,6 @@
 # ThinkPO: Thinking Preference Optimization
 <p align="center">
-  <img src="./imgs/Training_pipeline.png" alt="Training Pipeline">
+  <img src="./imgs/Training_pipeline.png" alt="Training Pipeline" width=600>
 </p>
 
 ---
