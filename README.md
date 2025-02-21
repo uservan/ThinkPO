@@ -1,6 +1,4 @@
 # ThinkPO: Thinking Preference Optimization
-> a simple yet effective postSFT method that enhances long CoT reasoning without requiring new long CoT responses
-
 <img src="./imgs/Training_pipeline.png" alt="Training Pipeline">
 
 ---
@@ -9,6 +7,42 @@
 [Bespoke-Stratos-7B-repro-SFT](https://huggingface.co/VanWang/Bespoke-Stratos-7B-repro-SFT), [Bespoke-Stratos-7B-repro-ThinkPO](https://huggingface.co/VanWang/Bespoke-Stratos-7B-repro-ThinkPO)
 
 - 2025-02-19: We released our [paper](https://arxiv.org/abs/2502.13173).
+
+---
+# Introduction
+> a simple yet effective postSFT method that enhances long CoT reasoning without requiring new long CoT responses
+
+- Here, we show the results of open-source reasoning LLMs before and after ThinkPO.
+## Accuracy
+
+| Models | Dataset   | Deepseek (SFT) | Ours (+ThinkPO) | Improv. (%) |
+|-----------|-----------|---------------|----------------|-------------|
+|DeepSeek-R1-Distill-Qwen-7B (Deepseek)  |MATH500   | 87.4          | 91.2           | 4.3%        |
+|| AIME      | 56.7      | 43.3           | -23.6%     |
+|| GPQA      | 47.0          | 49.5           | 5.3%        |
+|| GSM8K     | 87.2          | 87.6           | 0.5%        |
+|| Olympiad  | 58.6          | 58.6           | 0.0%        |
+|Bespoke-Stratos-7B (Bespoke)| MATH500   | 5696         | 6404           | 12.4%       |
+|| AIME      | 19858        | 20079          | 1.1%        |
+|| GPQA      | 5968         | 7301           | 22.3%       |
+|| GSM8K     | 1404         | 1755           | 25.0%       |
+|| Olympiad  | 11140        | 12204          | 9.6%        |
+
+## Average Response Length
+
+| Model | Dataset   | Deepseek (SFT) | Ours (+ThinkPO) | Improv. (%) |
+|-----------|-----------|---------------|----------------|-------------|
+|DeepSeek-R1-Distill-Qwen-7B (Deepseek) | MATH500   | 2577          | 3021           | 17.2%       |
+|| AIME      | 11419         | 12875          | 12.8%       |
+|| GPQA      | 4895          | 5604           | 14.5%       |
+|| GSM8K     | 619           | 668            | 7.9%        |
+|| Olympiad  | 7196          | 7383           | 2.6%        |
+|Bespoke-Stratos-7B (Bespoke)| MATH500   | 84.0         | 82.8           | -1.4%       |
+|| AIME      | 20.0         | 23.3           | 16.5%       |
+|| GPQA      | 37.9         | 43.4           | 14.5%       |
+|| GSM8K     | 92.9         | 93.3           | 0.4%        |
+|| Olympiad  | 44.1         | 48.5           | 10.0%       |
+
 
 ---
 # Quick Use
