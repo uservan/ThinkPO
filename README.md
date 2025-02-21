@@ -14,21 +14,27 @@
 # Quick Use
 
 ## SFT Train
-- you could run the following command
+- if you wanna use multi-gpus to train Qwen2.5-7B-Instruct with SFT, you could use the following command:
 ```shell
-deepspeed train/sft_train.py --model_name Qwen2.5-7B --gradient_accumulation_steps 16 --dataset_name NuminaMath --epoch 3 --lr 1e-5
+deepspeed train/sft_train.py --model_name Instruct-7b --gradient_accumulation_steps 16 --dataset_name Bespoke --epoch 3 --lr 1e-5
 ```
 
 ## ThinkPO Train
-- you could run the following command
+- if you wanna use multi-gpus to train Qwen2.5-7B-Instruct with ThinkPO, you could use the following command:
 ```shell
-deepspeed train/dpo_train.py --lr 3e-7 --beta 0.01 --model OpenThinker-7B --dataset Bespoke_dpo_long --gradient_accumulation_steps 12
+deepspeed train/dpo_train.py --lr 3e-7 --beta 0.01 --model Bespoke-7b --dataset Bespoke_dpo --gradient_accumulation_steps 12
 ```
 
 ## eval the model
-- you could run the following command
+- The LLM Reasoning Evaluation refers to [Sky-Thought](https://github.com/NovaSky-AI/SkyThought/tree/main)
+- you could use the following command to evaluate the model, like datasets MATH500,AIME,GPQADiamond,GSM8K,OlympiadBenchMath
 ```shell
-python ./tools/eval.py --model your_model_path --evals MATH500,AIME,GPQADiamond,GSM8K,OlympiadBenchMath --tp 2 --output_file save_result_path.txt
+cd ./tools
+python ./eval.py \
+    --model deepseek-ai/DeepSeek-R1-Distill-Qwen-7B \
+    --evals MATH500,AIME,GPQADiamond,GSM8K,OlympiadBenchMath \
+    --tp 1 --output_file ./results/eval/DeepSeek-R1-Distill-Qwen-7B.txt \
+    --result_dir ./results/generated
 ```
 
 ## citation

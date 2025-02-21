@@ -26,10 +26,11 @@ dataset_names = {
     # 'NuminaMath': 'AI-MO/NuminaMath-CoT',
     'openo1':'data/final/OpenO1-SFT-Pro-Filter.jsonl',
     'sky':'data/final/SKY-SFT.jsonl',
-    'Bespoke_dpo':f'VanWang/Bespoke_dpo_filter',
+    
     'Bespoke':'bespokelabs/Bespoke-Stratos-17k',
     'NuminaMath': 'data/final/NuminaMath-SFT',
     
+    'Bespoke_dpo':f'VanWang/Bespoke_dpo_filter',
     'Bespoke_dpo_long':f'data/final/Bespoke_dpo_filter_len_long.jsonl',
     'Bespoke_dpo_short':f'data/final/Bespoke_dpo_filter_len_short.jsonl',
     'Bespoke_dpo_middle':'data/final/Bespoke_dpo_filter_len_middle.jsonl'
