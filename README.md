@@ -17,7 +17,7 @@
 - Here, we show the results of open-source reasoning LLMs before and after ThinkPO.
 ## Accuracy
 
-| Models | Dataset   | Deepseek (SFT) | Ours (+ThinkPO) | Improv. (%) |
+| Models | Dataset   | SFT | Ours (+ThinkPO) | Improv. (%) |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
 |DeepSeek-R1-Distill-Qwen-7B (Deepseek)  |MATH500   | 87.4          | 91.2           | 4.3%        |
 || AIME      | 56.7      | 43.3           | -23.6%     |
@@ -32,7 +32,7 @@
 
 ## Average Response Length
 
-| Model | Dataset   | Deepseek (SFT) | Ours (+ThinkPO) | Improv. (%) |
+| Model | Dataset   | SFT | Ours (+ThinkPO) | Improv. (%) |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
 |DeepSeek-R1-Distill-Qwen-7B (Deepseek) | MATH500   | 2577          | 3021           | 17.2%       |
 || AIME      | 11419         | 12875          | 12.8%       |
