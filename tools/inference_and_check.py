@@ -216,7 +216,6 @@ def perform_check(handler: TaskHandler, temperatures, result_file, args):
     with open(result_file, 'w', encoding='utf-8') as file:
         json.dump(results, file, ensure_ascii=False, indent=4, cls=NumpyEncoder)
     
-
 def perform_inference_and_save(handler: TaskHandler, temperatures, max_tokens, result_file, llm, system_prompt, args):
     print(system_prompt)
     results = handler.load_existing_results(result_file)

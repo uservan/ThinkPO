@@ -3,7 +3,6 @@ import numpy as np
 import random
 import torch
 from utils.settings import *
-os.environ["HF_HOME"] = cache_dir
 
 
 def set_global(path):

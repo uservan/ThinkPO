@@ -1,12 +1,12 @@
 from __init__ import *
 from utils.utils import *
-import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer, Trainer, TrainingArguments,DataCollatorForSeq2Seq
+from transformers import Trainer, TrainingArguments,DataCollatorForSeq2Seq
 import wandb
-from utils.data_utils import save_all_results, read_saved_results, load_data
+from utils.data_utils import load_data
 from utils.load_model import *
 import argparse
 import os
+from .names import model_names, dataset_names
 
 os.environ['WANDB_MODE'] = 'offline'
 
@@ -19,32 +19,6 @@ def init_train_model(model_name=''):
         print(f"Token for ID 2: {token}")
         tokenizer.pad_token_id = 2 
     return model, tokenizer
-
-dataset_names = {
-    # 'NuminaMath': 'AI-MO/NuminaMath-CoT',
-    'openo1':'data/final/OpenO1-SFT-Pro-Filter.jsonl',
-    'sky':'data/final/SKY-SFT.jsonl',
-
-    'Bespoke':'bespokelabs/Bespoke-Stratos-17k',
-    'NuminaMath': 'data/final/NuminaMath-SFT.jsonl',
-}
-model_names = {
-    'Bespoke-7b': 'bespokelabs/Bespoke-Stratos-7B', 
-    'Bespoke-32b': 'bespokelabs/Bespoke-Stratos-32B', 
-    'llama8b': 'meta-llama/Llama-3.1-8B',
-    'llama3.2': 'meta-llama/Llama-3.2-3B',
-    
-    'Qwen2.5-3B':'Qwen/Qwen2.5-3B',
-    'Qwen2.5-7B':'Qwen/Qwen2.5-7B',
-    'Qwen2.5-14B':'Qwen/Qwen2.5-14B',
-    'Qwen2.5-32B':'Qwen/Qwen2.5-32B',
-
-    'Qwen2.5-3B-Instruct':'Qwen/Qwen2.5-3B-Instruct',
-    'Qwen2.5-7B-Instruct':'Qwen/Qwen2.5-7B-Instruct',
-    'Qwen2.5-14B-Instruct':'Qwen/Qwen2.5-14B-Instruct',
-    'Qwen2.5-32B-Instruct':'Qwen/Qwen2.5-32B-Instruct',
-    
-}
 
 def preprocess_function(example):
     global MAX_LENGTH
@@ -92,7 +66,7 @@ def parse_args(args=None):
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument('--gradient_accumulation_steps', type=int, default=96)
     parser.add_argument('--dataset_name', type=str, default='Bespoke', help='Bespoke, NuminaMath')
-    parser.add_argument('--deepspeed', type=str, default="./train/deepseed/zero3_config2.json") #
+    parser.add_argument('--deepspeed', type=str, default=None) #
     parser.add_argument('--local_rank', type=int, default=0)
     parser.add_argument('--epoch', type=int, default=1)
     return parser.parse_args(args)
@@ -101,7 +75,7 @@ args = parse_args()
 
 lr = args.lr
 MAX_LENGTH = args.MAX_LENGTH
-model_name = args.model_name # 'meta-llama/Llama-3.2-3B'  #   # 
+model_name = args.model_name
 dataset_name = args.dataset_name
 wandb_name = f"{dataset_name}_{model_name}_sft_lr{lr}"
 
@@ -110,7 +84,8 @@ train_dataset = load_train_data(dataset_name)
 
 if args.local_rank == 0:
     wandb.login()
-    wandb.init(project="MiniMind-Full-SFT", name=wandb_name)
+    wandb.init(project="ThinkPO-SFT", name=wandb_name)
+    
 training_args = TrainingArguments(
     save_only_model=True,
     output_dir=set_global(f"./train/models/sft/{wandb_name}"),

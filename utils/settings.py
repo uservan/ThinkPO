@@ -1,6 +1,14 @@
-project_dir = '/home/wxy320/ondemand/program/o1-reproduce'
+
+import os
+
+project_dir = './'
 cache_dir = '/scratch/pbsjobs/wxy320/huggingface'
 hug_token = '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'
+os.environ["HF_HOME"] = cache_dir
+
+
+
+
 SYSTEM_PROMPT = {
     "Qwen/Qwen2-7B-Instruct": "You are a helpful and harmless assistant. You are Qwen developed by Alibaba. You should think step-by-step.",
     "Qwen/QwQ-32B-Preview": "You are a helpful and harmless assistant. You are Qwen developed by Alibaba. You should think step-by-step.",

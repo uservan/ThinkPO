@@ -7,7 +7,7 @@ def save_results(out_path, data):
     if os.path.exists(out_path):
         with open(out_path, "a", encoding="utf-8") as f:
             json.dump(data, f)
-            f.write('\n')  # 添加换行符
+            f.write('\n') 
     else:
         save_all_results(out_path, [data])
 

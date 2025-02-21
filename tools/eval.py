@@ -29,6 +29,7 @@ def parse_arguments():
     parser.add_argument("--source", type=str, help="Source for the dataset.")
     parser.add_argument("--output_file", required=True, type=str, default='./eval/Bespoke-7B.txt', help="Output file to write results to.")
     parser.add_argument("--temperatures", type=float, nargs="+", default=[0.7], help="Temperature for sampling.")
+    parser.add_argument("--result_dir", type=str, default='./results/generated', help="Source for the dataset.")
     return parser.parse_args()
 
 def extract_accuracy_from_output(output):
@@ -68,7 +69,7 @@ def main():
     all_logs = ""
     results = {}
     result_dir = args.model.split("/")[-2] if 'check' in args.model.split("/")[-1] else args.model.split("/")[-1]
-    result_dir = './results/'+ result_dir
+    result_dir = os.path.join(args.result_dir,result_dir)
     # Run the Python command for each eval and collect logs
     for eval_name in evals:
         command = [

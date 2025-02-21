@@ -1,4 +1,16 @@
-# ThinkPO
+# ThinkPO: Thinking Preference Optimization
+> a simple yet effective postSFT method that enhances long CoT reasoning without requiring new long CoT responses
+
+![](./imgs/Training_pipeline.png)
+---
+# News
+- 2025-02-21: We released our four models: [DeepSeek-R1-Distill-Qwen-7B-ThinkPO](https://huggingface.co/VanWang/DeepSeek-R1-Distill-Qwen-7B-ThinkPO), [Bespoke-Stratos-7B-ThinkPO](https://huggingface.co/VanWang/Bespoke-Stratos-7B-ThinkPO),
+[Bespoke-Stratos-7B-repro-SFT](https://huggingface.co/VanWang/Bespoke-Stratos-7B-repro-SFT), [Bespoke-Stratos-7B-repro-ThinkPO](https://huggingface.co/VanWang/Bespoke-Stratos-7B-repro-ThinkPO)
+
+- 2025-02-19: We released our [paper](https://arxiv.org/abs/2502.13173).
+
+---
+# Quick Use
 
 ## SFT Train
 - you could run the following command
@@ -16,4 +28,17 @@ deepspeed train/dpo_train.py --lr 3e-7 --beta 0.01 --model OpenThinker-7B --data
 - you could run the following command
 ```shell
 python ./tools/eval.py --model your_model_path --evals MATH500,AIME,GPQADiamond,GSM8K,OlympiadBenchMath --tp 2 --output_file save_result_path.txt
+```
+
+## citation
+```bibtex
+@misc{yang2025thinkingpreferenceoptimization,
+      title={Thinking Preference Optimization}, 
+      author={Wang Yang and Hongye Jin and Jingfeng Yang and Vipin Chaudhary and Xiaotian Han},
+      year={2025},
+      eprint={2502.13173},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2502.13173}, 
+}
 ```
