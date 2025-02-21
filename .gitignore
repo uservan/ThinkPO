@@ -2,3 +2,5 @@
 utils/upload.py
 results/
 scripts/
+tools/eval.sh
+tools/results
