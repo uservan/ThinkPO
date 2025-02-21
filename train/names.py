@@ -13,7 +13,7 @@ def init_train_model(model_name=''):
     return model, tokenizer
 
 def load_train_data(choose_data_name):
-    if choose_data_name in ['Bespoke_dpo', 'Bespoke']:
+    if choose_data_name in ['Bespoke_dpo', 'Bespoke', 'Deepseek']:
         choose_data_name = dataset_names[choose_data_name]
         choose_data = load_data(choose_data_name, 'huggingface')
     else:
@@ -23,12 +23,8 @@ def load_train_data(choose_data_name):
     return choose_data
 
 dataset_names = {
-    # 'NuminaMath': 'AI-MO/NuminaMath-CoT',
-    'openo1':'data/final/OpenO1-SFT-Pro-Filter.jsonl',
-    'sky':'data/final/SKY-SFT.jsonl',
-    
+    'NuminaMath': 'AI-MO/NuminaMath-CoT',
     'Bespoke':'bespokelabs/Bespoke-Stratos-17k',
-    'NuminaMath': 'data/final/NuminaMath-SFT',
     
     'Bespoke_dpo':f'VanWang/Bespoke_dpo_filter',
     'Bespoke_dpo_long':f'data/final/Bespoke_dpo_filter_len_long.jsonl',

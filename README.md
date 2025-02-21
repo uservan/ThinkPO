@@ -16,13 +16,13 @@
 ## SFT Train
 - if you wanna use multi-gpus to train Qwen2.5-7B-Instruct with SFT, you could use the following command:
 ```shell
-deepspeed train/sft_train.py --model_name Instruct-7b --gradient_accumulation_steps 16 --dataset_name Bespoke --epoch 3 --lr 1e-5
+deepspeed train/sft_train.py --model_name Instruct-7b --gradient_accumulation_steps 16 --dataset_name Bespoke --epoch 3 --lr 1e-5 --deepspeed ./train/deepseed/zero3_config2.json
 ```
 
 ## ThinkPO Train
 - if you wanna use multi-gpus to train Qwen2.5-7B-Instruct with ThinkPO, you could use the following command:
 ```shell
-deepspeed train/dpo_train.py --lr 3e-7 --beta 0.01 --model Bespoke-7b --dataset Bespoke_dpo --gradient_accumulation_steps 12
+deepspeed train/dpo_train.py --lr 3e-7 --beta 0.01 --model Bespoke-7b --dataset Bespoke_dpo --gradient_accumulation_steps 12 --deepspeed ./train/deepseed/zero3_config2.json
 ```
 
 ## eval the model
