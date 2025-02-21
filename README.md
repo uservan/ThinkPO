@@ -1,7 +1,8 @@
 # ThinkPO: Thinking Preference Optimization
 > a simple yet effective postSFT method that enhances long CoT reasoning without requiring new long CoT responses
 
-![](./imgs/Training_pipeline.png)
+<img src="./imgs/Training_pipeline.png" alt="Training Pipeline" width="500" height="200">
+
 ---
 # News
 - 2025-02-21: We released our four models: [DeepSeek-R1-Distill-Qwen-7B-ThinkPO](https://huggingface.co/VanWang/DeepSeek-R1-Distill-Qwen-7B-ThinkPO), [Bespoke-Stratos-7B-ThinkPO](https://huggingface.co/VanWang/Bespoke-Stratos-7B-ThinkPO),
