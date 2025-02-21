@@ -4,3 +4,4 @@ results/
 scripts/
 tools/eval.sh
 tools/results
+train/sft_7b.sh

@@ -34,6 +34,8 @@ dataset_names = {
 model_names = {
     'Deepseek-7b':'deepseek-ai/DeepSeek-R1-Distill-Qwen-7B',
 
+    'Instruct-1.5b':'Qwen/Qwen2.5-1.5B-Instruct',
+    'Instruct-3b':'Qwen/Qwen2.5-3B-Instruct',
     'Instruct-7b':'Qwen/Qwen2.5-7B-Instruct',
     'Instruct-3b':'Qwen/Qwen2.5-3B-Instruct',
     'Instruct-14b':'Qwen/Qwen2.5-14B-Instruct',
