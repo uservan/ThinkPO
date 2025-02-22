@@ -51,6 +51,13 @@
 
 ---
 # Quick Use
+## Settting
+- in ./utils/settings.py, you could set your project path, huggingface cache path and token
+```python
+project_dir = 'path to your project'
+cache_dir = 'path to huggingface cache'
+hug_token = 'your huggingface token'
+```
 
 ## SFT Train
 - if you wanna use multi-gpus to train Qwen2.5-7B-Instruct with SFT, you could use the following command:

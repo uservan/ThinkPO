@@ -2,10 +2,10 @@
 import os
 
 project_dir = './'
-cache_dir = '/scratch/pbsjobs/wxy320/huggingface'
-hug_token = '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'
-os.environ["HF_HOME"] = cache_dir
-
+cache_dir = None
+hug_token = ''
+if cache_dir: 
+    os.environ["HF_HOME"] = cache_dir
 
 
 
