@@ -6,7 +6,7 @@ from utils.data_utils import load_data
 from utils.load_model import *
 import argparse
 import os
-from .names import model_names, dataset_names
+from train.names import model_names, dataset_names
 
 os.environ['WANDB_MODE'] = 'offline'
 

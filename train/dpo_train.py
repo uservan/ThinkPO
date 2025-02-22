@@ -6,7 +6,7 @@ from trl import DPOConfig, DPOTrainer
 import wandb
 from utils.load_model import *
 import argparse
-from .names import *
+from train.names import *
 
 warnings.filterwarnings('ignore')
 os.environ["WANDB_MODE"] = "offline"
