@@ -7,6 +7,7 @@
 
 ---
 # News
+- 2025-02-22: We released our ThinkPO dataset: [Bespoke_dpo_filter](https://huggingface.co/datasets/VanWang/Bespoke_dpo_filter)
 - 2025-02-21: We released our four models:
   - [DeepSeek-R1-Distill-Qwen-7B-ThinkPO](https://huggingface.co/VanWang/DeepSeek-R1-Distill-Qwen-7B-ThinkPO)
   - [Bespoke-Stratos-7B-ThinkPO](https://huggingface.co/VanWang/Bespoke-Stratos-7B-ThinkPO)
