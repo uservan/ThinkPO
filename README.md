@@ -5,6 +5,19 @@
   <img src="./imgs/Training_pipeline.png" alt="Training Pipeline" width=600>
 </p>
 
+---
+# News
+- 2025-02-22: We released our ThinkPO dataset: [Bespoke_dpo_filter](https://huggingface.co/datasets/VanWang/Bespoke_dpo_filter)
+- 2025-02-21: We released our four models:
+  - [DeepSeek-R1-Distill-Qwen-7B-ThinkPO](https://huggingface.co/VanWang/DeepSeek-R1-Distill-Qwen-7B-ThinkPO)
+  - [Bespoke-Stratos-7B-ThinkPO](https://huggingface.co/VanWang/Bespoke-Stratos-7B-ThinkPO)
+  - [Bespoke-Stratos-7B-repro-SFT](https://huggingface.co/VanWang/Bespoke-Stratos-7B-repro-SFT)
+  - [Bespoke-Stratos-7B-repro-ThinkPO](https://huggingface.co/VanWang/Bespoke-Stratos-7B-repro-ThinkPO)
+
+- 2025-02-19: We released our [paper](https://arxiv.org/abs/2502.13173).
+
+---
+
 # Introduction
 - Here, we show the results of open-source reasoning LLMs before and after ThinkPO.
 ## Accuracy
@@ -71,4 +84,16 @@ python ./eval.py \
     --evals MATH500,AIME,GPQADiamond,GSM8K,OlympiadBenchMath \
     --tp 2 --output_file ./results/eval/DeepSeek-R1-Distill-Qwen-7B.txt \
     --result_dir ./results/generated
+```
+## citation
+```bibtex
+@misc{yang2025thinkingpreferenceoptimization,
+      title={Thinking Preference Optimization}, 
+      author={Wang Yang and Hongye Jin and Jingfeng Yang and Vipin Chaudhary and Xiaotian Han},
+      year={2025},
+      eprint={2502.13173},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2502.13173}, 
+}
 ```
