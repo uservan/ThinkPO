@@ -72,16 +72,3 @@ python ./eval.py \
     --tp 2 --output_file ./results/eval/DeepSeek-R1-Distill-Qwen-7B.txt \
     --result_dir ./results/generated
 ```
-
-## citation
-```bibtex
-@misc{yang2025thinkingpreferenceoptimization,
-      title={Thinking Preference Optimization}, 
-      author={Wang Yang and Hongye Jin and Jingfeng Yang and Vipin Chaudhary and Xiaotian Han},
-      year={2025},
-      eprint={2502.13173},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2502.13173}, 
-}
-```
